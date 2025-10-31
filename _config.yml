@@ -4,7 +4,7 @@ url: "https://Moriumaso.github.io"
 baseurl: ""
 
 # Minimal Mistakes Theme settings
-minimal_mistakes_skin: "default" 
+minimal_mistakes_skin: "default"
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 # Plugins (ビルドエラー対策)
