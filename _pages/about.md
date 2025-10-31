@@ -9,3 +9,4 @@ permalink: /about/
 
 ## 🎓 学歴
 * 〇〇大学 〇〇学部
+
