@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "私について (About Me)"
-permalink:/about/
+permalink: /about/
 ---
 
 ## 👤 プロフィール
