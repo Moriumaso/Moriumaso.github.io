@@ -1,0 +1,1 @@
+code .\pages\projects[slug].js

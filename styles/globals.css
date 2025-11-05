@@ -1,0 +1,66 @@
+:root{
+--max-width: 980px;
+--accent: #2563eb;
+--muted: #555;
+--bg: #ffffff;
+--card-bg: #fafafa;
+font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body,#__next{height:100%}
+body{
+margin:0;
+background:var(--bg);
+color:#111;
+line-height:1.6;
+padding:24px;
+}
+.container{
+max-width:var(--max-width);
+margin:0 auto;
+padding:0 16px;
+}
+.header{
+display:flex;
+gap:16px;
+align-items:center;
+margin-bottom:24px;
+}
+.avatar{
+width:88px;
+height:88px;
+border-radius:12px;
+object-fit:cover;
+background:#eee;
+}
+.header h1{
+margin:0;
+font-size:1.25rem;
+}
+.header .small{
+color:var(--muted);
+font-size:.9rem;
+}
+.socials{display:flex;gap:8px;margin-top:6px}
+.sns-icon{width:20px;height:20px;display:inline-block;vertical-align:middle}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:16px;
+}
+.card{
+    background:var(--card-bg);
+border-radius:10px;
+padding:16px;
+box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.card h3{margin:0 0 8px 0}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+
+footer{margin-top:48px;color:var(--muted);font-size:.9rem;text-align:center}
+
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}

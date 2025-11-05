@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://Moriumaso.github.io/sitemap.xml
