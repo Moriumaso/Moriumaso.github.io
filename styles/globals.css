@@ -46,6 +46,41 @@
   object-fit:cover;
 }
 
+/* Header / socials styling */
+.header{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin-bottom:24px;
+}
+.avatar{
+  width:88px;
+  height:88px;
+  border-radius:12px;
+  object-fit:cover;
+  background:#eee;
+}
+.header h1{margin:0;font-size:1.25rem}
+.small{color:var(--muted);font-size:.9rem}
+.socials{display:flex;gap:8px;margin-top:6px}
+.socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  text-decoration:none;
+}
+.sns-icon{width:20px;height:20px;display:inline-block}
+
+/* Focus styles for accessibility */
+a:focus,
+.socials a:focus{
+  outline:3px solid color-mix(in srgb, var(--accent) 60%, white);
+  outline-offset:3px;
+}
+
 /* ...existing code... */
 
 .projects-grid{

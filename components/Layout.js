@@ -13,13 +13,13 @@ export default function Layout({ children, title, description }) {
       <h1>Your Name</h1>
       <div className="small">ソフトウェアエンジニア / 〇〇大学卒</div>
       <div className="socials" aria-hidden={false}>
-        <a href="https://github.com/Moriumaso" aria-label="github" target="_blank" rel="noreferrer">
+        <a href="https://github.com/Moriumaso" aria-label="github" target="_blank" rel="noopener noreferrer">
           <img src="/icons/github.svg" className="sns-icon" alt="GitHub" />
         </a>
-        <a href="https://www.linkedin.com/in/your-id" aria-label="linkedin" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/your-id" aria-label="linkedin" target="_blank" rel="noopener noreferrer">
           <img src="/icons/linkedin.svg" className="sns-icon" alt="LinkedIn" />
         </a>
-        <a href="https://twitter.com/your-id" aria-label="twitter" target="_blank" rel="noreferrer">
+        <a href="https://twitter.com/your-id" aria-label="twitter" target="_blank" rel="noopener noreferrer">
           <img src="/icons/twitter.svg" className="sns-icon" alt="Twitter" />
         </a>
       </div>
