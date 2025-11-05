@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 export default function Layout({ children, title, description }) {
-return (
-<div className="container">
-<Head>
-<title>{title ? ${title} — Your Name : 'Your Name — Portfolio'}</title>
-{description && <meta name="description" content={description} />}
-</Head>
+  return (
+    <div className="container">
+      <Head>
+        <title>{title ? `${title} — Your Name` : 'Your Name — Portfolio'}</title>
+        {description && <meta name="description" content={description} />}
+      </Head>
   <header className="header" role="banner" aria-label="Site header">
     <img src="/images/avatar.png" alt="avatar" className="avatar" />
     <div>
