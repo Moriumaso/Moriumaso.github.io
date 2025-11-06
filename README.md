@@ -31,7 +31,7 @@ next-sitemap はビルド時に sitemap.xml を生成します（siteUrl は htt
 
 - アバター（トップの写真）: `public/images/avatar.jpg` を置き換えるだけで反映されます。推奨サイズは正方形で 560x560px 程度（表示は CSS により約 280px を基準に縮小されます）。
 - プロジェクトのサムネイルやギャラリー画像: `public/images/projects/` フォルダにファイルを置いて、各 Markdown/MDX の frontmatter で `thumbnail: /images/projects/your-image.jpg` のように指定してください。
-- SNS アイコン（カスタム画像）: `public/icons/` に SVG/PNG を追加または差し替えるだけで使用できます。既存の SVG（instagram.svg, x.svg, mail.svg, github.svg）を上書きしても動作します。
+- SNS アイコン（カスタム画像）: `public/icons/` に JPG/SVG/PNG を追加または差し替えるだけで使用できます。既存のアイコン（instagram, x, mail, github）は拡張子を変更して保存しても動作します（例: `instagram.jpg`）。
 
 画像アップ後のチェック:
 
