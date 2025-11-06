@@ -81,6 +81,22 @@ a:focus,
   outline-offset:3px;
 }
 
+/* Center header content horizontally and stack on small screens */
+.header{
+  justify-content: center;
+  text-align: center;
+}
+.header > div{
+  text-align: center;
+}
+@media (max-width:560px){
+  .header{
+    flex-direction:column;
+    gap:10px;
+    align-items:center;
+  }
+}
+
 /* ...existing code... */
 
 .projects-grid{
@@ -130,3 +146,17 @@ a:focus,
 }
 
 /* ...existing code... */
+
+/* Footer: left align credit at page bottom */
+footer{
+  margin-top:48px;
+  color:var(--muted);
+  font-size:.9rem;
+  text-align:left;
+}
+
+/* Center small headings and body in the top section (About / hero) */
+.container > main > section:first-of-type h2,
+.container > main > section:first-of-type p{
+  text-align:center;
+}
