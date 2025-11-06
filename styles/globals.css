@@ -49,9 +49,12 @@
 /* Header / socials styling */
 .header{
   display:flex;
-  gap:16px;
+  flex-direction:column;
+  gap:12px;
   align-items:center;
+  justify-content:center;
   margin-bottom:24px;
+  text-align:center;
 }
 .avatar{
   width:88px;
@@ -82,18 +85,9 @@ a:focus,
 }
 
 /* Center header content horizontally and stack on small screens */
-.header{
-  justify-content: center;
-  text-align: center;
-}
-.header > div{
-  text-align: center;
-}
 @media (max-width:560px){
   .header{
-    flex-direction:column;
     gap:10px;
-    align-items:center;
   }
 }
 
