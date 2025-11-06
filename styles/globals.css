@@ -1,0 +1,204 @@
+/* ...existing code... */
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+.card{
+  background:var(--card-bg);
+  border-radius:10px;
+  padding:16px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.card h3{margin:0 0 8px 0}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+
+/* 追加: サムネイル */
+.card .thumbnail{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:10px;
+  background:#eee;
+}
+
+/* 追加: Resume 向け */
+.resume-article{
+  display:block;
+}
+.resume-article .section{
+  margin-bottom:18px;
+}
+.resume-article h2{margin-top:12px;margin-bottom:6px}
+
+/* 追加: Gallery コンポーネント */
+.gallery{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+.gallery img{
+  width:calc(50% - 4px);
+  border-radius:8px;
+  object-fit:cover;
+}
+
+/* Header / socials styling */
+.header{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:24px;
+  text-align:center;
+}
+.avatar{
+  /* メインのプロフィール写真（ユーザー要望で約2倍に拡大） */
+  width:280px;
+  height:280px;
+  max-width:40vw; /* 小さい画面では画面幅に合わせて縮小 */
+  border-radius:20px;
+  object-fit:cover;
+  background:#eee;
+  display:block;
+}
+.header h1{margin:0;font-size:1.25rem}
+.small{color:var(--muted);font-size:.9rem}
+.socials{display:flex;gap:10px;margin-top:6px}
+.socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  text-decoration:none;
+  background:transparent;
+}
+.sns-icon{width:20px;height:20px;display:inline-block}
+
+/* Focus styles for accessibility */
+a:focus,
+.socials a:focus{
+  outline:3px solid color-mix(in srgb, var(--accent) 60%, white);
+  outline-offset:3px;
+}
+
+/* Center header content horizontally and stack on small screens */
+@media (max-width:560px){
+  .header{
+    gap:10px;
+  }
+  /* モバイルではアバターを少し小さめにしてレイアウトを保つ */
+  .avatar{width:180px;height:180px;max-width:50vw}
+}
+
+/* 非トップページ用: 右上に固定する小さい SNS+avatar パネル */
+.page-meta{
+  /* スクロールで追従させない: container を基準に絶対配置にする */
+  position:absolute;
+  top:16px;
+  right:16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  z-index:1200;
+  pointer-events:auto;
+}
+.avatar.avatar--small{
+  width:56px;
+  height:56px;
+  border-radius:10px;
+  object-fit:cover;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.small-socials{
+  /* 2列×2行のグリッドにして、上段に Instagram/X、下段に GitHub/Email を配置 */
+  display:grid;
+  grid-template-columns:repeat(2, auto);
+  gap:8px;
+  align-items:center;
+  justify-items:center;
+}
+.small-socials a{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:6px}
+.small-socials .sns-icon{width:18px;height:18px}
+
+@media (max-width:560px){
+  /* モバイルでは右上が狭くなるので少し内側に寄せる */
+  .page-meta{top:10px;right:10px}
+  .avatar.avatar--small{width:48px;height:48px}
+  .small-socials a{width:24px;height:24px}
+  .small-socials .sns-icon{width:16px;height:16px}
+}
+
+/* container を基準に絶対配置が効くようにする */
+.container{position:relative}
+
+/* ...existing code... */
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+.card{
+  background:var(--card-bg);
+  border-radius:10px;
+  padding:16px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.card h3{margin:0 0 8px 0}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+
+/* 追加: サムネイル */
+.card .thumbnail{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:10px;
+  background:#eee;
+}
+
+/* 追加: Resume 向け */
+.resume-article{
+  display:block;
+}
+.resume-article .section{
+  margin-bottom:18px;
+}
+.resume-article h2{margin-top:12px;margin-bottom:6px}
+
+/* 追加: Gallery コンポーネント */
+.gallery{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+.gallery img{
+  width:calc(50% - 4px);
+  border-radius:8px;
+  object-fit:cover;
+}
+
+/* ...existing code... */
+
+/* Footer: left align credit at page bottom */
+footer{
+  margin-top:48px;
+  color:var(--muted);
+  font-size:.9rem;
+  text-align:left;
+}
+
+/* Center small headings and body in the top section (About / hero) */
+.container > main > section:first-of-type h2,
+.container > main > section:first-of-type p{
+  text-align:center;
+}
