@@ -22,7 +22,7 @@ export default function Layout({ children, title, description }) {
         <img src="/icons/mail.svg" className="sns-icon" alt="Email" />
       </a>
     </div>
-    <img src="/images/avatar.png" alt="avatar" className="avatar" />
+  <img src="/images/avatar.jpg" alt="avatar" className="avatar" />
     <div>
       <h1>Your Name</h1>
       <div className="small">ソフトウェアエンジニア / 〇〇大学卒</div>
