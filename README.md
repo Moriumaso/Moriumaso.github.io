@@ -46,3 +46,46 @@ npm install
 npm run dev
 6. ブラウザで http://localhost:3000 を確認。
 7. 問題が出たらターミナルのエラーメッセージをここに貼ってください — 修正を出します。
+
+----------------------------------------
+デプロイ（公開）方法
+----------------------------------------
+
+このリポジトリは Next.js ベースです。公開方法は主に 2 通りあります。手軽で互換性が高いのは Vercel、リポジトリの GitHub Pages に置きたい場合は静的エクスポートを作る手順が必要です。どちらを採るか教えてください。下に手順を両方載せます。
+
+A) 推奨 — Vercel（自動デプロイ / 無料枠あり）
+- 手順（簡単）:
+	1. https://vercel.com にアクセスしてアカウント作成（GitHub 連携）
+	2. "New Project" → GitHub リポジトリを選択 → ブランチに `feature/nextjs-portfolio`（もしくは `main`）を選択
+	3. ビルドコマンド: `npm run build`（デフォルトで OK）
+	4. デプロイをトリガー。以降は push するたび自動で再デプロイされます。
+
+	メリット: Next.js の機能（ISR / Image 最適化 等）をそのまま使える。設定不要で SSL / カスタムドメイン対応。
+
+B) GitHub Pages に静的ファイルを置く（`https://<username>.github.io`）
+- 注意: Next.js の `next export` による静的エクスポートは、getStaticProps/getStaticPaths を使った静的サイト生成に適していますが、getServerSideProps や一部の Next.js 機能は動作しません（本リポジトリは SSG 想定のため可能なはずです）。
+- 手順（ローカルで実行する場合、PowerShell）:
+	1. 依存をインストールしておく: `npm install`
+	2. ビルド&エクスポート: `npm run build ; npm run export`
+		 - もし `package.json` に `export` スクリプトが無ければ、先に `package.json` に以下を追加してください:
+			 "scripts": {
+				 "build": "next build",
+				 "export": "next build && next export"
+			 }
+		 - 実行すると `out/` フォルダが生成されます。
+	3. `out/` の中身を `gh-pages` ブランチにデプロイします（簡易手順）:
+		 - (a) `npm install --save-dev gh-pages` を追加して `package.json` に `"deploy": "npm run export && gh-pages -d out -b gh-pages"` を追加し、`npm run deploy` を実行して自動で `gh-pages` ブランチへ push する方法。
+		 - (b) 手動で `out/` を `gh-pages` ブランチに push する方法（`git` の `worktree` や `subtree` を利用）。
+
+	4. GitHub リポジトリの Settings → Pages から `gh-pages` ブランチを選択して公開します。公開後に https://<username>.github.io/<repo>/ で見られます。ユーザー名ルート (`https://Moriumaso.github.io`) にしたい場合はリポジトリ名を `Moriumaso.github.io` にするか、そのリポジトリを使って Pages を設定してください。
+
+注意点:
+- 画像パス（`public/` 下のファイル）はエクスポート後も `out/` に含まれます。`next/image` を使った最適化は export 時に制限があるため、`<img>` での利用や外部の最適化を検討してください。
+- sitemap や robots はビルド時に生成されますが、`next export` 実行後に `out/` に出力されていることを確認してください。
+
+どちらで進めますか？
+	- すぐに Vercel 接続を行って公開を実行してほしい（その場合、あなたの GitHub 連携許可が必要）
+	- GitHub Pages に静的エクスポートして私が `gh-pages` ブランチへ push するための手順（私が代行する場合はリポジトリへの push 権限が必要）
+	- 手順のみ欲しい（自分でやる）
+
+選択を教えてください。選択に従って次の具体的な操作（自動デプロイ設定 or `package.json` の小修正と `gh-pages` 用の deploy スクリプト追加など）を実施します。
