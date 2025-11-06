@@ -97,6 +97,36 @@ a:focus,
   .avatar{width:180px;height:180px;max-width:50vw}
 }
 
+/* 非トップページ用: 右上に固定する小さい SNS+avatar パネル */
+.page-meta{
+  position:fixed;
+  top:16px;
+  right:16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  z-index:1200;
+}
+.avatar.avatar--small{
+  width:56px;
+  height:56px;
+  border-radius:10px;
+  object-fit:cover;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.small-socials{display:flex;gap:8px}
+.small-socials a{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:6px}
+.small-socials .sns-icon{width:18px;height:18px}
+
+@media (max-width:560px){
+  /* モバイルでは右上が狭くなるので少し内側に寄せる */
+  .page-meta{top:10px;right:10px}
+  .avatar.avatar--small{width:48px;height:48px}
+  .small-socials a{width:24px;height:24px}
+  .small-socials .sns-icon{width:16px;height:16px}
+}
+
 /* ...existing code... */
 
 .projects-grid{
