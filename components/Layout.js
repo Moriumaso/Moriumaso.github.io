@@ -9,14 +9,17 @@ export default function Layout({ children, title, description }) {
       </Head>
   <header className="header" role="banner" aria-label="Site header">
     <div className="socials" aria-hidden={false}>
+      <a href="https://www.instagram.com/your-id" aria-label="instagram" target="_blank" rel="noopener noreferrer">
+        <img src="/icons/instagram.svg" className="sns-icon" alt="Instagram" />
+      </a>
+      <a href="https://x.com/your-id" aria-label="x" target="_blank" rel="noopener noreferrer">
+        <img src="/icons/x.svg" className="sns-icon" alt="X (formerly Twitter)" />
+      </a>
       <a href="https://github.com/Moriumaso" aria-label="github" target="_blank" rel="noopener noreferrer">
         <img src="/icons/github.svg" className="sns-icon" alt="GitHub" />
       </a>
-      <a href="https://www.linkedin.com/in/your-id" aria-label="linkedin" target="_blank" rel="noopener noreferrer">
-        <img src="/icons/linkedin.svg" className="sns-icon" alt="LinkedIn" />
-      </a>
-      <a href="https://twitter.com/your-id" aria-label="twitter" target="_blank" rel="noopener noreferrer">
-        <img src="/icons/twitter.svg" className="sns-icon" alt="Twitter" />
+      <a href="mailto:you@example.com" aria-label="email">
+        <img src="/icons/mail.svg" className="sns-icon" alt="Email" />
       </a>
     </div>
     <img src="/images/avatar.png" alt="avatar" className="avatar" />
