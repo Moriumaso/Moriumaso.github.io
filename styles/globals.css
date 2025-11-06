@@ -57,11 +57,14 @@
   text-align:center;
 }
 .avatar{
-  width:140px;
-  height:140px;
-  border-radius:16px;
+  /* メインのプロフィール写真（ユーザー要望で約2倍に拡大） */
+  width:280px;
+  height:280px;
+  max-width:40vw; /* 小さい画面では画面幅に合わせて縮小 */
+  border-radius:20px;
   object-fit:cover;
   background:#eee;
+  display:block;
 }
 .header h1{margin:0;font-size:1.25rem}
 .small{color:var(--muted);font-size:.9rem}
@@ -90,6 +93,8 @@ a:focus,
   .header{
     gap:10px;
   }
+  /* モバイルではアバターを少し小さめにしてレイアウトを保つ */
+  .avatar{width:180px;height:180px;max-width:50vw}
 }
 
 /* ...existing code... */
