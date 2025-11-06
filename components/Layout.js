@@ -36,9 +36,9 @@ export default function Layout({ children, title, description }) {
           </div>
         </header>
       ) : (
-        /* 各ページ（トップ以外）で右上に小さく表示する固定パネル */
+        /* 各ページ（トップ以外）でページ内右上に小さく表示するパネル（スクロールで追従しない） */
         <div className="page-meta" aria-hidden={false}>
-          <div className="small-socials">
+          <div className="small-socials" role="navigation" aria-label="social links">
             <a href="https://www.instagram.com/your-id" aria-label="instagram" target="_blank" rel="noopener noreferrer">
               <img src="/icons/instagram.jpg" className="sns-icon" alt="Instagram" />
             </a>

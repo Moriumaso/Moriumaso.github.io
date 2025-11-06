@@ -99,7 +99,8 @@ a:focus,
 
 /* 非トップページ用: 右上に固定する小さい SNS+avatar パネル */
 .page-meta{
-  position:fixed;
+  /* スクロールで追従させない: container を基準に絶対配置にする */
+  position:absolute;
   top:16px;
   right:16px;
   display:flex;
@@ -107,6 +108,7 @@ a:focus,
   align-items:center;
   gap:8px;
   z-index:1200;
+  pointer-events:auto;
 }
 .avatar.avatar--small{
   width:56px;
@@ -115,7 +117,14 @@ a:focus,
   object-fit:cover;
   box-shadow:0 2px 6px rgba(0,0,0,0.08);
 }
-.small-socials{display:flex;gap:8px}
+.small-socials{
+  /* 2列×2行のグリッドにして、上段に Instagram/X、下段に GitHub/Email を配置 */
+  display:grid;
+  grid-template-columns:repeat(2, auto);
+  gap:8px;
+  align-items:center;
+  justify-items:center;
+}
 .small-socials a{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:6px}
 .small-socials .sns-icon{width:18px;height:18px}
 
@@ -126,6 +135,9 @@ a:focus,
   .small-socials a{width:24px;height:24px}
   .small-socials .sns-icon{width:16px;height:16px}
 }
+
+/* container を基準に絶対配置が効くようにする */
+.container{position:relative}
 
 /* ...existing code... */
 
