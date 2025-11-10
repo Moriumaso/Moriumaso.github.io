@@ -9,7 +9,7 @@ export default function Layout({ children, title, description }) {
   return (
     <div className="container">
       <Head>
-        <title>{title ? `${title} — Your Name` : 'Your Name — Portfolio'}</title>
+        <title>{title ? `${title} — 森 爽真` : '森 爽真 — Portfolio'}</title>
         {description && <meta name="description" content={description} />}
   {/* favicon: prefer JPG, fallback to SVG */}
   <link rel="icon" href="/icons/github.jpg" />
@@ -33,10 +33,16 @@ export default function Layout({ children, title, description }) {
               <SnsIcon name="mail" alt="Email" className="sns-icon" />
             </a>
           </div>
-          <img src="/images/avatar.png" alt="avatar" className="avatar" />
+          {/* Try JPG first, fall back to PNG if not present/invalid */}
+          <img
+            src="/images/avatar.jpg"
+            alt="avatar"
+            className="avatar"
+            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/avatar.png' }}
+          />
           <div>
-            <h1>Your Name</h1>
-            <div className="small">ソフトウェアエンジニア / 〇〇大学卒</div>
+            <h1>森 爽真</h1>
+            <div className="small">東京科学大学大学院卒</div>
           </div>
         </header>
       ) : (
@@ -56,14 +62,19 @@ export default function Layout({ children, title, description }) {
               <SnsIcon name="mail" alt="Email" className="sns-icon" />
             </a>
           </div>
-          <img src="/images/avatar.png" alt="avatar" className="avatar avatar--small" />
+          <img
+            src="/images/avatar.jpg"
+            alt="avatar"
+            className="avatar avatar--small"
+            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/avatar.png' }}
+          />
         </div>
       )}
 
       <main role="main">{children}</main>
 
       <footer role="contentinfo">
-        © {new Date().getFullYear()} Your Name — <Link href="/resume">Resume</Link>
+        © {new Date().getFullYear()} 森 爽真 — <Link href="/resume">Resume</Link>
       </footer>
     </div>
   )
